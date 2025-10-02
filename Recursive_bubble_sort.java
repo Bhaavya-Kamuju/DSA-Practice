@@ -33,3 +33,26 @@ return rec_bubble(arr,n-1);
 }
 }
 }
+/* optimized code
+public static int[] rec_bubble(int arr[], int n) {
+    // Base Case: range == 1.
+    if (n == 1) return arr;
+
+    int didSwap = 0;
+    for (int j = 0; j <= n - 2; j++) {
+        if (arr[j] > arr[j + 1]) {
+            int temp = arr[j + 1];
+            arr[j + 1] = arr[j];
+            arr[j] = temp;
+            didSwap = 1;
+        }
+    }
+
+    // if no swapping happens.
+    if (didSwap == 0) return arr;
+
+    //Range reduced after recursion:
+    return rec_bubble(arr, n - 1);
+}
+*/
+
