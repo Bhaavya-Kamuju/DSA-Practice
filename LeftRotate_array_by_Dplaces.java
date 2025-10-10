@@ -18,7 +18,16 @@ for(int i=0;i<n;i++){
 System.out.print(arr[i]+" ");
 }
 }
+/* BRUTE FORCE APPROACH
 public static int[] leftRotate(int[] arr, int n,int d){
+if(n==0){
+System.out.println("Array length is zero: ");
+return arr;
+}
+d = d%n;
+if(d>n){
+return arr;
+}
 int[] temp = new int[n];
 for(int i=0;i<d;i++){
 temp[i]=arr[i];
@@ -31,4 +40,25 @@ arr[i]=temp[i-(n-d)];
 }
 return arr;
 }
+*/
+// OPTIMAL APPROACH (LESS SPACE COMPLEXITY)
+public static int[] leftRotate(int[] arr, int n,int d){
+reverse(arr,0,d-1);
+reverse(arr,d,n-1);
+reverse(arr,0,n-1);
+return arr;
 }
+public static int[] reverse(int[] arr,int start,int end){
+while(start<=end){
+int temp=arr[start];
+arr[start]=arr[end];
+arr[end]=temp;
+start++;
+end--;
+}
+return arr;
+}
+}
+
+}
+
