@@ -18,7 +18,7 @@ for(int i=0;i<n;i++){
 System.out.print(arr[i]+" ");
 }
 }
-/*
+/*BRUTEFORCE Approach
 public static int[] rightRotate(int[] arr,int n, int d){
 d=d%n;
 if(n==0){
@@ -41,6 +41,7 @@ arr[i]=temp[i];
 return arr;
 }
 */
+//Optimal Approach
 public static int[] rightRotate(int[] arr,int n, int d){
 reverse(arr,0,n-d-1);
 reverse(arr,n-d,n-1);
@@ -58,6 +59,7 @@ end--;
 return arr;
 }
 }
+
 
 
 
