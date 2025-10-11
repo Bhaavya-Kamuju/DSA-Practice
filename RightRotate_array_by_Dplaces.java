@@ -41,7 +41,7 @@ arr[i]=temp[i];
 return arr;
 }
 */
-//Optimal Approach
+//Optimal Approach (less space complexity, but time complexity doubles)
 public static int[] rightRotate(int[] arr,int n, int d){
 reverse(arr,0,n-d-1);
 reverse(arr,n-d,n-1);
@@ -59,6 +59,7 @@ end--;
 return arr;
 }
 }
+
 
 
 
