@@ -41,7 +41,7 @@ arr[i]=temp[i-(n-d)];
 return arr;
 }
 */
-// OPTIMAL APPROACH (LESS SPACE COMPLEXITY)
+// OPTIMAL APPROACH (LESS SPACE COMPLEXITY,BUT TIME COMPLEXITY DOUBLES)
 public static int[] leftRotate(int[] arr, int n,int d){
 reverse(arr,0,d-1);
 reverse(arr,d,n-1);
@@ -61,4 +61,5 @@ return arr;
 }
 
 }
+
 
