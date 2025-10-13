@@ -17,6 +17,7 @@ System.out.print(arr[i]+" ");
 }
 }
 //BRUTE FORCE (TC=O(2n), SC=O(x) where x = no.of non-zero elements
+/*
 public static int[] moveZeroes(int[] arr,int n){
 ArrayList<Integer> temp = new ArrayList<>();
 for(int i=0;i<n;i++)
@@ -35,6 +36,36 @@ arr[i]=0;
 return arr;
 }
 }
+*/
+
+public static int[] moveZeroes(int[] arr,int n){
+  int j=-1;
+  for(int i=0;i<n;i++){
+    if(arr[i]==0){
+      j=i;
+      break;
+    }
+  }
+  if(j==-1){
+    return arr;
+  }
+  for(int i=j+1;i<n;i++){
+    if(arr[i]!=0){
+      swap(arr,i,j);
+      j++;
+    }
+  }
+  public static int[] swap(int[] arr,int i,int j){
+    int temp=arr[i];
+    arr[i]=arr[j];
+    arr[j]=temp;
+    return arr;
+  }
+  return arr;
+}
+}
+    
+
 
 
 
