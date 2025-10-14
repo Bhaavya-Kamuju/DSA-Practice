@@ -31,5 +31,6 @@ index = i;
 return index;
 }
 }
+//Time complexity = O(n) and Space complexity = O(1)
 
 
