@@ -18,6 +18,7 @@ System.out.println("Element is not found in the array");
 }
 else{
 System.out.println("The element is found at : "+result+" index.");
+System.out.println("That is the element is at "+i+1+" index");
 }
 }
 public static int linearSearch(int[] arr,int n,int x){
@@ -30,4 +31,5 @@ index = i;
 return index;
 }
 }
+
 
