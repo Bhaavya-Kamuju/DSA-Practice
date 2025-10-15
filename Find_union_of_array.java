@@ -1,6 +1,7 @@
 import java.util.*;
 
 class TUF{
+  //brute force approach
 static ArrayList<Integer> FindUnion(int arr1[], int arr2[], int n, int m) {
   HashSet <Integer> s=new HashSet<>();
   ArrayList < Integer > Union=new ArrayList<>();
