@@ -25,6 +25,7 @@ class Union_array{
     }
   }
   //BRUTE FORCE APPROACH (TC = O(nlogn+mlogn)+O(n+m) , SC=O(n+m)+O(n+m))
+  /*
   public static ArrayList<Integer> findUnion(int[] arr1, int[] arr2, int n,int m){
     ArrayList<Integer> union = new ArrayList<>();
     HashSet<Integer> hs = new HashSet<>();
@@ -40,6 +41,41 @@ class Union_array{
     return union;
   }
 }
+*/
         
     
-//Better approach
+//Optimal approach (TC = O(n+m) sc= O(n+m)
+  public static ArrayList<Integer> findUnion(int[] arr1, int[] arr2, int n,int m){
+    ArrayList<Integer> union = new ArrayList<>();
+    int i = 0,j=0;
+    while(i<n && j<m){
+      if(arr1[i]<arr2[j]){
+        if(union.size() == 0 || union.get(union.size()-1) != arr1[i]){
+          union.add(arr1[i]);
+        }
+        i++;
+      }
+      else{
+        if(union.size() == 0 || union.get(union.size()-1) != arr2[j]){
+          union.add(arr2[j]);
+        }
+        j++;
+      }
+    }
+    while(i<n){ //if elements are left in arr1
+        if(union.size() == 0 || union.get(union.size()-1) != arr1[i]){
+          union.add(arr1[i]);
+        }
+        i++;
+      }
+    while(j<m){ //if elements are left in arr1
+        if(union.size() == 0 || union.get(union.size()-1) != arr2[j]){
+          union.add(arr2[j]);
+        }
+        j++;
+    }
+    return union;
+  }
+}
+      
+        
