@@ -42,7 +42,23 @@ class Union_array{
   }
 }
 */
-        
+/* using hashmap (TC = O(n+mlog(n+m)) , SC=O(n+m)
+public static ArrayList<Integer> findUnion(int[] arr1, int[] arr2, int n,int m){
+    ArrayList<Integer> union = new ArrayList<>();
+    HashMap<Integer,Integer> hm = new HashMap<>();
+    for(int i=0;i<n;i++){
+      hm.put(arr1[i],hm.getOrDefault(arr1[i],0)+1);
+    }
+    for(int i=0;i<m;i++){
+      hm.put(arr2[i],hm.getOrDefault(arr2[i],0)+1);
+    }
+    for(int it:hm.keySet()){
+      union.add(it);
+    }
+    return union;
+  }
+}
+*/
     
 //Optimal approach (TC = O(n+m) sc= O(n+m)
   public static ArrayList<Integer> findUnion(int[] arr1, int[] arr2, int n,int m){
