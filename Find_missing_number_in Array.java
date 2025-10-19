@@ -14,6 +14,7 @@ class FindMissing{
         
         System.out.println("The missing number is : "+result);
     }
+    //BRUTE FORCE APPROACH (TC = o(N^2) , SC = O(1))
     public static int findmissing(int[] arr,int n){
        for(int i=1;i<=n;i++){ //iterate to check 1-N numbers
            int flag = 0; //initially inc=dicates the number is not in array, if i is in array flag value becomes 1
@@ -29,4 +30,18 @@ class FindMissing{
        }
        return -1; //This will not execute, this is written just to avoid warnings
     }
+    /* Using hashing (TC = O(2n) , SC = O(n))
+     public static int findmissing(int[] arr,int n){
+      int hash[] = new int[n+1];
+      for(int i=0;i<n-1;i++){
+          hash[arr[i]]++;
+      }
+      for(int i=1;i<=n;i++){
+          if(hash[i]==0){
+              return i;
+          }
+      }
+       return -1;
+    }
+*/
 }
