@@ -15,6 +15,7 @@ class FindMissing{
         System.out.println("The missing number is : "+result);
     }
     //BRUTE FORCE APPROACH (TC = o(N^2) , SC = O(1))
+    /*
     public static int findmissing(int[] arr,int n){
        for(int i=1;i<=n;i++){ //iterate to check 1-N numbers
            int flag = 0; //initially inc=dicates the number is not in array, if i is in array flag value becomes 1
@@ -44,4 +45,14 @@ class FindMissing{
        return -1;
     }
 */
+    //Optimal appraoch 1 (TC = O(N), SC=O(1))
+    public static int findmissing(int[] arr,int n){
+        int sum1 = ((n+1)*n)/2;
+        int sum2=0;
+        for(int i=0;i<n-1;i++){
+            sum2+=arr[i];
+        }
+        return sum1-sum2;
+    }
+
 }
