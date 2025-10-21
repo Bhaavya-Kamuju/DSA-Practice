@@ -13,6 +13,7 @@ class Maximum_Consecutive_ones{
         int max = maxConsecutives(arr,n);
         System.out.println("Maximum number of consecutive ones: "+max);
     }
+    // TC = O(N) AND SC = O(1)
     public static int maxConsecutives(int[] arr,int n){
         int count =0, max_count=0;
         for(int i=0;i<n;i++){
