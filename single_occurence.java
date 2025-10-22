@@ -18,6 +18,7 @@ class single_occurence{
             System.out.println("Number occurred only once : "+result);
         }
     }
+    //BRUTEFORCE APPROACH (TC = O(N^2), SC = O(1))
     public static int singleOccurence(int[] arr,int n){
         for(int i=0;i<n;i++){
             int num = arr[i];
