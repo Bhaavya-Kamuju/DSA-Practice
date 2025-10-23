@@ -18,6 +18,7 @@ class single_occurence{
             System.out.println("Number occurred only once : "+result);
         }
     }
+    /*
     //BRUTEFORCE APPROACH (TC = O(N^2), SC = O(1))
     public static int singleOccurence(int[] arr,int n){
         for(int i=0;i<n;i++){
@@ -29,6 +30,24 @@ class single_occurence{
                 }
             }
             if(count == 1){
+                return arr[i];
+            }
+        }
+        return -1;
+    }
+    */
+    /* BETTER APPRAOCH 1 (USING HASHING i.e., Hash array) (TC=O(N)+O(N)+O(N) = O(N), SC = O(MAX+1) Where max = max no.of elements
+    public static int singleOccurence(int[] arr,int n){
+        int max = arr[0];
+        for(int i=0;i<n;i++){
+            max = Math.max(arr[i],max);
+        }
+        int[] hash = new int[max+1];
+        for(int i=0;i<n;i++){
+            hash[arr[i]]++;
+        }
+        for(int i=0;i<n;i++){
+            if(hash[arr[i]]==1){
                 return arr[i];
             }
         }
