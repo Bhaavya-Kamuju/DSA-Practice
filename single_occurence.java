@@ -1,4 +1,4 @@
-import java.io.*;
+/*import java.io.*;
 import java.util.*;
 class single_occurence{
     public static void main(String[] args){
@@ -18,7 +18,6 @@ class single_occurence{
             System.out.println("Number occurred only once : "+result);
         }
     }
-    /*
     //BRUTEFORCE APPROACH (TC = O(N^2), SC = O(1))
     public static int singleOccurence(int[] arr,int n){
         for(int i=0;i<n;i++){
@@ -35,8 +34,7 @@ class single_occurence{
         }
         return -1;
     }
-    */
-    /* BETTER APPRAOCH 1 (USING HASHING i.e., Hash array) (TC=O(N)+O(N)+O(N) = O(N), SC = O(MAX+1) Where max = max no.of elements
+    // BETTER APPRAOCH 1 (USING HASHING i.e., Hash array) (TC=O(N)+O(N)+O(N) = O(N), SC = O(MAX+1) Where max = max no.of elements
     public static int singleOccurence(int[] arr,int n){
         int max = arr[0];
         for(int i=0;i<n;i++){
@@ -53,4 +51,19 @@ class single_occurence{
         }
         return -1;
     }
+    //Better approach 2 (USING MAP DATASTRUCTURE) (TC=O(N*logM) + O(M), where M = size of the map i.e. M = (N/2)+1. N = size of the array. , SC = O(M))
+    public static int singleOccurence(int[] arr,int n){
+        HashMap<Integer,Integer> mp = new HashMap<>();
+        for(int i=0;i<n;i++){
+            int value = mp.getOrDefault(arr[i],0);
+            mp.put(arr[i],value+1);
+        }
+        for(Map.Entry<Integer,Integer> it : mp.entrySet()){
+            if(it.getValue()==1){
+                return it.getKey();
+            }
+        }
+        return -1;
+    }
 }
+*/
