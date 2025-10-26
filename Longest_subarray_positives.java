@@ -31,4 +31,18 @@ class LongestSubarray_positives{
         }
         return maxLen;
     }
+    //OPTIMISED BRUTE FORCE APPROACH (TC~= O(N^2), SC = O(1))
+    public static int longestSubarray(int[] arr, int n,int S){
+        int maxLen = 0;
+        for(int i=0;i<n;i++){
+            int sum = 0;
+            for(int j=i;j<n;j++){
+                sum = sum+arr[j];
+                if(sum == S){
+                    maxLen = Math.max(maxLen, j-i+1);
+                }
+            }
+        }
+        return maxLen;
+    }
 }
