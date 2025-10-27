@@ -45,4 +45,26 @@ class LongestSubarray_positives{
         }
         return maxLen;
     }
+    //BETTER APPROACH
+    public static int longestSubarray(int[] arr, int n,int S){
+        Map <Long,Integer> prefixSumMap = new HashMap<>();
+        int maxLen = 0;
+        long sum = 0 ;
+        for(int i=0;i<n;i++){
+            sum = sum+arr[i];
+            if(sum == S){
+            maxLen = Math.max(maxLen, i+1);
+            }
+            long rem = sum - S;
+            if(prefixSumMap.containsKey(rem)){
+                int len = i - prefixSumMap.get(rem);
+                maxLen = Math.max(maxLen,len);
+            }
+            if(!prefixSumMap.containsKey(sum)){
+                prefixSumMap.put(sum,i);
+            }
+        }
+        
+        return maxLen;
+    }
 }
