@@ -67,7 +67,7 @@ class LongestSubarray_positives{
         
         return maxLen;
     }
-    //OPTIMAL APPROACH (
+    //OPTIMAL APPROACH ( TC =O(2N) , SC = O(1))
     public static int longestSubarray(int[] arr, int n,int S){
         int left = 0, right = 0;
         long sum = arr[0];
