@@ -45,7 +45,7 @@ class LongestSubarray_positives{
         }
         return maxLen;
     }
-    //BETTER APPROACH
+    //BETTER APPROACH (TC = O(N) OR O(N*LOG N), SC = O(N))
     public static int longestSubarray(int[] arr, int n,int S){
         Map <Long,Integer> prefixSumMap = new HashMap<>();
         int maxLen = 0;
