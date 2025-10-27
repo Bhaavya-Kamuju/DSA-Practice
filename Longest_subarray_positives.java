@@ -67,4 +67,24 @@ class LongestSubarray_positives{
         
         return maxLen;
     }
+    //OPTIMAL APPROACH (
+    public static int longestSubarray(int[] arr, int n,int S){
+        int left = 0, right = 0;
+        long sum = arr[0];
+        int maxLen = 0;
+        while(right<n){
+            while(left<=right && sum>S){
+                sum = sum-arr[left];
+                left++;
+            }
+            if(sum == S){
+                maxLen = Math.max(maxLen, right-left+1);
+            }
+            right++;
+            if(right < n){
+                 sum = sum + arr[right];
+            }
+        }
+        return maxLen;
+    }
 }
